@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Quiz</title>
+<style>
+    header {
+        font-family: Georgia;
+        
+        text-align: center;
+        padding: 20px 0;
+    }
+    h1{
+        
+        top: 0px;
+        text-align: center;
+       
+    }
+    body {
+        background-color: rgb(27, 140, 205);
+        font-family: " gill sans";
+        margin: 0;
+        padding: 0;
+        border: 50px solid rgb(0, 0, 0);
+        color: aliceblue;
+    }
+  .quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .btn-submit {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>Quiz </h1>
+<div class="quiz-container">
+  <div class="question">
+    <p>1. What does HTML stand for?</p>
+    <input type="text" id="q1-answer">
+  </div>
+  <div class="question">
+    <p>2. Which input type displays a radio button?</p>
+    <input type="radio" name="q2" value="a"> <input type="radio"><br>
+    <input type="radio" name="q2" value="b"> <input type="checkbox"><br>
+    <input type="radio" name="q2" value="c"> <input type="text"><br>
+    <input type="radio" name="q2" value="d"> <input type="submit"><br>  
+</div>
+  <div class="question">
+    <p>3. What is the purpose of the <label> element in a form?</p>
+    <input type="radio" name="question3" value="a">  To style input fields<br>
+    <input type="radio" name="question3" value="b"> To provide context for form elements<br>
+    <input type="radio" name="question3" value="c"> To create clickable buttons<br>
+    <input type="radio" name="question3" value="d">  To define form submission behavior
+    <br>
+  </div>
+  <div class="question">
+    <p>4. Which attribute is used to specify the URL where the form data should be submitted?</p>
+    <input type="radio" name="question4" value="a"> src<br>
+    <input type="radio" name="question4" value="b"> href<br>
+    <input type="radio" name="question4" value="c"> action<br>
+    <input type="radio" name="question4" value="d"> method<br>
+  </div>
+  <div class="question">
+    <p>5. Which attribute is used to make a form field required?</p>
+    <input type="radio" name="question5" value="a"> validate<br>
+    <input type="radio" name="question5" value="b"> required<br>
+    <input type="radio" name="question5" value="c">mandatory<br>
+    <input type="radio" name="question5" value="d">verify<br>
+  </div>
+  <div class="question">
+    <p>6. What is the purpose of the autocomplete attribute in an HTML form field?</p>
+    <input type="radio" name="question6" value="a">To provide suggestions for autofill<br>
+    <input type="radio" name="question6" value="b"> To validate the input data<br>
+    <input type="radio" name="question6" value="c">To specify the input type<br>
+    <input type="radio" name="question6" value="d">To hide the input field<br>
+  </div>
+  <div class="question">
+    <p>7.How can you make a form field read-only in HTML?</p>
+    <input type="radio" name="question7" value="a">Using the readonly attribute<br>
+    <input type="radio" name="question7" value="b"> Using the disabled attribute<br>
+    <input type="radio" name="question7" value="c"> Using the hidden attribute<br>
+    <input type="radio" name="question7" value="d">  Using CSS styling<br>
+  </div>
+  <div class="question">
+    <p>8. Which attribute is used to specify the initial value of a form field?</p>
+    <input type="radio" name="question8" value="a"> value<br>
+    <input type="radio" name="question8" value="b"> placeholder<br>
+    <input type="radio" name="question8" value="c"> initial<br>
+ <input type="radio" name="question8" value="d"> default<br>
+  </div>
+  <div class="question">
+    <p>9. What is the purpose of the placeholder attribute in an HTML form field?</p>
+    <input type="radio" name="question9" value="a"> To specify a default value for the fieldr<br>
+    <input type="radio" name="question9" value="b"> o provide a hint or example of the expected input<br>
+    <input type="radio" name="question9" value="c"> To define the maximum length of input allowed<br>
+    <input type="radio" name="question9" value="d"> To disable the input field<br>
+  </div>
+  <div class="question">
+    <p>10. Which attribute is used to specify the value of a form field?</p>
+    <input type="radio" name="question10" value="a"> VALUE<br>
+    <input type="radio" name="question10" value="b"> TEXT<br>
+    <input type="radio" name="question10" value="c"> DATA<br>
+    <input type="radio" name="question10" value="d"> INPUT<br>
+  </div>
+  <button type="submit" id="submit-button">Submit Quiz</button>
+</div>
+<div id="result"></div>
+</div>
+
+<script>
+    document.getElementById('submit-button').addEventListener('click', function(event) {
+        event.preventDefault();
+        let score = 0;
+    
+       
+        const q1Answer = document.getElementById('q1-answer').value.toLowerCase().trim();
+        if (q1Answer === 'Hypertext markup languange') {
+            score++;
+        }
+    
+        
+        const q2Answer = document.querySelector('input[name="q2"]:checked');
+        if (q2Answer && q2Answer.value === 'a') {
+            score++;
+        }
+
+        const q3Answer = document.querySelector('input[name="question3"]:checked');
+        if (q3Answer && q3Answer.value === 'b') {
+            score++;
+        }
+    
+       
+        const q4Answer = document.querySelector('input[name="question4"]:checked');
+        if (q4Answer && q4Answer.value === 'c') {
+            score++;
+        }
+    
+     
+        const q5Answer = document.querySelector('input[name="question5"]:checked');
+        if (q5Answer && q5Answer.value === 'b') {
+            score++;
+        }
+    
+      
+        const q6Answer = document.querySelector('input[name="question6"]:checked');
+        if (q6Answer && q6Answer.value === 'a') {
+            score++;
+        }
+    
+       
+        const q7Answer = document.querySelector('input[name="question7"]:checked');
+        if (q7Answer && q7Answer.value === 'a') {
+            score++;
+        }
+    
+       
+        const q8Answer = document.querySelector('input[name="question8"]:checked');
+        if (q8Answer && q8Answer.value === 'a') {
+            score++;
+        }
+    
+      
+        const q9Answer = document.querySelector('input[name="question9"]:checked');
+        if (q9Answer && q9Answer.value === 'b') {
+            score++;
+        }
+    
+      
+        const q10Answer = document.querySelector('input[name="question10"]:checked');
+        if (q10Answer && q10Answer.value === 'a') {
+            score++;
+        }
+        window.location.href = `result.html?score=${score}`;
+    });
+  
+    </script>
+    </body>
+    </html>
